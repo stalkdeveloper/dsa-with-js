@@ -3,14 +3,23 @@
 */
 
 const removeDuplicates = (nums) => {
-    let count = 0;
+    let count = 1;
     let length = nums.length;
-    let arr = [0];
-    for (let i = 0; i < length; i++) {
+    let arr = [nums[0]];
+    /* for (let i = 0; i < length; i++) {
         if (nums[i] !== nums[i+1]) {
             arr[count] = nums[i+1];
             count++;
         }
+    } */
+    
+    let i = 0;
+    while (i < nums.length-1) {
+        if (nums[i] !== nums[i + 1]) {
+            arr[count] = nums[i + 1];
+            count++;
+        }
+        i++;
     }
     return arr;
 };
